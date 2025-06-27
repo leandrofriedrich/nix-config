@@ -1,22 +1,17 @@
 { config, inputs, lib, pkgs, vars, ... }:
 
 {
-  sops = {
-    secrets."users/david".neededForUsers = true;
-    secrets."users/david".owner = "root";
-  };
-
   users = {
     mutableUsers = false;
-    users.david = {
+    users.leandro = {
       isNormalUser = true;
-      description = "David";
+      description = "Leandro Friedrich";
       extraGroups =
         [ "wheel" ]
         ++ lib.optionals config.networking.networkmanager.enable [ "networkmanager" ]
         ++ lib.optionals config.programs.wireshark.enable [ "wireshark" ]
         ++ lib.optionals config.virtualisation.libvirtd.enable [ "libvirt" ];
-      hashedPasswordFile = config.sops.secrets."users/david".path;
+      hashedPassword = "$y$j9T$V0M7qYhKW9SoL7VkD/ivR/$xnJElMHla7BQD.RJzKaQLCHddoVMdGLZDCaXYC3Bzn7";
       openssh.authorizedKeys.keys = vars.sshPubKeys;
     } // lib.optionalAttrs config.programs.zsh.enable { shell = pkgs.zsh; };
     users.root = {

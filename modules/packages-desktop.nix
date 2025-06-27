@@ -29,7 +29,10 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    bambu-studio
     bitwarden-desktop
+    davinci-resolve
+    discord-ptb
     edl
     gimp3-with-plugins
     heimdall
@@ -38,18 +41,26 @@ in
     hunspellDicts.pl_PL
     hyphenDicts.de_DE
     hyphenDicts.en_US
+    itgmania
     kdePackages.sddm-kcm
+    libmikmod
     libreoffice-qt6-fresh
-    qbittorrent
+    lutris
+    mikmod
+    milkytracker
+    obs-studio
+    pmbootstrap
+    prismlauncher
+    remmina
     signal-desktop
+    transmission-qt
     vlc
     yt-dlp
 
     selfPkgs.dumpyara
-    selfPkgs.ida-pro
-    selfPkgs.itgmania-zmod
+    #selfPkgs.ida-pro
     selfPkgs.odin4
     selfPkgs.outfox-alpha5
-    selfPkgs.ttf-ms-win11
+    #selfPkgs.ttf-ms-win11
   ];
 }

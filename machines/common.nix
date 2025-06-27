@@ -8,8 +8,6 @@
     ../modules/zsh.nix
   ];
 
-  sops.age.keyFile = "/var/lib/sops-nix/key.txt";
-
   boot.kernel.sysctl."kernel.dmesg_restrict" = false;
   boot.tmp.cleanOnBoot = true;
 

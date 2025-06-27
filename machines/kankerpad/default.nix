@@ -1,4 +1,4 @@
-# ASRock B550M Pro4 AMD Desktop
+# Lenovo ThinkPad L15
 
 { inputs, pkgs, lib, ... }:
 
@@ -8,14 +8,11 @@
     ../desktop.nix
   ];
 
-  sops.defaultSopsFile = "${inputs.self}/secrets/secrets-ryuzu.yaml";
-
-  networking.hostName = "ryuzu";
+  networking.hostName = "KankerPad";
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.enable = lib.mkDefault true;
 
   security.sudo.wheelNeedsPassword = false;
-
 }

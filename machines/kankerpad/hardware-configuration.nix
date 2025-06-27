@@ -3,30 +3,26 @@
 {
   boot = {
     kernelParams = [ "i915.enable_guc=2" ];
-    kernelModules = [ "hp-wmi" "kvm-intel" ];
-    initrd.availableKernelModules = [ "xhci_pci" "nvme" ];
+    kernelModules = [ "kvm-intel" ];
+    initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "sdhci_pci" ];
     initrd.kernelModules = [ "i915" ];
-    initrd.luks.devices."NIXOS_ROOTFS".device = "/dev/disk/by-partlabel/root";
   };
 
   fileSystems = {
     "/" = {
-      device = "/dev/mapper/NIXOS_ROOTFS";
+      device = "/dev/disk/by-uuid/600cbe59-735c-4f31-b355-73e5d6913900";
       fsType = "ext4";
     };
     "/boot" = {
-      device = "/dev/disk/by-partlabel/EFI";
+      device = "/dev/disk/by-uuid/4AFC-5D5B";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
   };
 
-  zramSwap.enable = true;
-  swapDevices = [{
-    device = "/var/lib/swapfile";
-    size = 8*1024;
-    randomEncryption.enable = true;
-  }];
+  swapDevices = [
+    { device = "/dev/disk/by-uuid/419f3331-ad01-4cdf-b2d2-d7d662241b4f"; }
+  ];
 
   hardware = {
     bluetooth.enable = true;

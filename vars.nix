@@ -1,15 +1,5 @@
 {
-  baseDomain = "david-w.eu";
-  lanDomain = "fritz.box";
-  routerIP = "192.168.64.1";
-
   sshPubKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP+HHP+nC6vrDwqEbTgiNhFnaqD3WEBgZMq7FUPWV0Ls main@bitwarden"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINOyckAtDOO5eRG9xYOzRWLNnGtBCq/Om/sLPEFLBtT8 david@key4"
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDL1ZyieyrpGZifD2Cp04oLjIWiu3oY4rg0bz5heusuweSbP+hJO4jrToZG0YUNO5opTTjhUtkWxItz2rad0ywQRw7xYSfdgjPN6v2LMAHPCI7rRsGrfpL8lKgL5iu5ymnyEJtSRY3W6iV6WTuobP0NZoM9TISs62yBBsl84OfmsYz8VYdwb5jAaBA++j5Ig9cbSco+2PTu0JASU6QzjED6v2j+m1sg4mwBdNVuB6NeGDodblJ0rXznTDggMy6YLgCm9/YTPF46R41RIx/It86xjYndZo86UTxWuV86uKF04Y7D+9sjkYChw8NVkAoTTMSchAgGgG4HFm0+8Sz/h8D20Xf7w4wNZjK0+k+yFcZsSEi8PH9pO8ft++EdKN89zoxLjiD/HDPFr94lcV3VACW1S2pvytC6JZciErzp6fS4poGy8Bo2dBGhGGH6W9tyYRTJKKq/ngeP6FtX9wZF0+yn0FZLxjPLcgWUQgPKLIf1JsldtrRSmcl4J+RIDuVuy2s= leandro@KankerPad"
   ];
-
-  rpi5 = {
-    lanIP = "192.168.64.2";
-    lanIPv6 = "fd64::2";
-  };
 }
