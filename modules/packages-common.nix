@@ -29,6 +29,7 @@ in
     curl
     dig
     dnsmasq
+    droidcam
     dtc
     fastfetch
     ffmpeg
@@ -54,11 +55,13 @@ in
     rsync
     sops
     sturmflut
+    tailscale
     tmate
     tmux
     unrar
     unzip
     usbutils
+    v4l-utils
     zip
     zlib
 

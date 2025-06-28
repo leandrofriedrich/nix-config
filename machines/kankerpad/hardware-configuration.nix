@@ -3,7 +3,9 @@
 {
   boot = {
     kernelParams = [ "i915.enable_guc=2" ];
-    kernelModules = [ "kvm-intel" ];
+    kernelModules = [ "kvm-intel" "v4l2loopback" ];
+    extraModulePackages = [ pkgs.linuxPackages_latest.v4l2loopback ];
+    extraModprobeConfig = ''options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1 '';
     initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "sdhci_pci" ];
     initrd.kernelModules = [ "i915" ];
   };
