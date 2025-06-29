@@ -30,7 +30,8 @@
     bluetooth.enable = true;
     cpu.intel.updateMicrocode = true;
     enableRedistributableFirmware = true;
-    graphics.extraPackages32 = [ pkgs.intel-media-driver-32 ];
+    #graphics.extraPackages32 = [ pkgs.intel-media-driver-32 ];
+    graphics.extraPackages32 = with pkgs.driversi686Linux; [ intel-media-driver ];
     graphics.extraPackages = [
       pkgs.intel-media-driver
       pkgs.intel-compute-runtime

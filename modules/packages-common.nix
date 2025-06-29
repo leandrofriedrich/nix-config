@@ -5,6 +5,7 @@ let
 in
 {
   programs = {
+    steam.enable = true;
     git.enable = true;
     htop.enable = true;
     neovim = {
